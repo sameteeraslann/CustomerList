@@ -1,0 +1,55 @@
+﻿@model CustomerVM
+
+<h2>Yeni Müşteri</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div> <!-- Tüm hata mesajlarını burada gösterir -->
+
+    <div class="form-group">
+        <label asp-for="NameSurname"></label>
+        <input asp-for="NameSurname" class="form-control" />
+        <span asp-validation-for="NameSurname" class="text-danger"></span> <!-- Hata mesajı burada gösterilir -->
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+    @* <div class="form-group">
+    <label asp-for="FiltreType"></label>
+    <select asp-for="FiltreType" class="form-control select2">
+    <option value="">Seçiniz</option>
+    <option value="Inline">Inline</option>
+    <option value="AcikKasa">Acik Kasa</option>
+    <option value="WaterLife">WaterLife</option>
+    </select>
+    <span asp-validation-for="FiltreType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+    <label asp-for="Price"></label>
+    <input asp-for="Price" type="number" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+    </div> *@
+    @*  <div class="form-group">
+    <label asp-for="InstallationDate"></label>
+    <input asp-for="InstallationDate" type="date" class="form-control" placeholder="dd/MM/yyyy" />
+    <span asp-validation-for="InstallationDate" class="text-danger"></span>
+    </div> *@
+    <div class="form-group">
+        <label asp-for="Note"></label>
+        <input asp-for="Note" class="form-control" />
+        <span asp-validation-for="Note" class="text-danger"></span>
+    </div>
+    <div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+}
