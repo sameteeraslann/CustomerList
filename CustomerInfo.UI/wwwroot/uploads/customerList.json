@@ -1,8 +1,8 @@
 [
   {
     "Id": "7bc9ea40-fec9-4317-bc40-6d4813c588f2",
-    "NameSurname": "samet ",
-    "Address": "şirinevler",
+    "NameSurname": "test ",
+    "Address": "test",
     "Price": 0,
     "FiltreType": null,
     "Note": "test note",
@@ -10,22 +10,12 @@
     "FiltreDegisimTarihi": "0001-01-01T00:00:00"
   },
   {
-    "Id": "c72d3ef0-bacc-4910-afe8-8fedc04a13f2",
-    "NameSurname": "samet ",
-    "Address": "şirinevler",
+    "Id": "7bc9ea40-fec9-4317-bc40-6d4813c588f2",
+    "NameSurname": "test ",
+    "Address": "test",
     "Price": 0,
     "FiltreType": null,
     "Note": "test note",
-    "InstallationDate": "0001-01-01T00:00:00",
-    "FiltreDegisimTarihi": "0001-01-01T00:00:00"
-  },
-  {
-    "Id": "7baa54a1-60d1-4bef-abab-c244487366ce",
-    "NameSurname": "eymen ",
-    "Address": "bahçelievler ",
-    "Price": 0,
-    "FiltreType": null,
-    "Note": "test",
     "InstallationDate": "0001-01-01T00:00:00",
     "FiltreDegisimTarihi": "0001-01-01T00:00:00"
   }

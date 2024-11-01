@@ -41,12 +41,19 @@
                     dataType: "json",
                     success: function (data) {
                         if (data.length > 0) {
-                            debugger;
-                            data = JSON.parse(data)
+                            data = JSON.parse(data);
+
+                            // Görünmesini istediğiniz kolonlar
+                            var allowedColumns = ["NameSurname", "Address", "Price", "Note"];
+
                             // Kolon başlıklarını ve veri anahtarlarını dinamik olarak oluşturma
-                            var columns = Object.keys(data[0]).map(function (key) {
-                                return { title: key, data: key };
-                            });
+                            var columns = Object.keys(data[0])
+                                .filter(function (key) {
+                                    return allowedColumns.includes(key); // Sadece izin verilen kolonlar
+                                })
+                                .map(function (key) {
+                                    return { title: key, data: key };
+                                });
 
                             // Header satırını güncelleme
                             var headerRow = $('#table-header');
@@ -59,8 +66,7 @@
                             $('#myTable').DataTable({
                                 data: data,       // API’den gelen veriyi tabloya aktarma
                                 columns: columns, // Kolon başlıklarını ayarlama
-                                destroy: true   // Mevcut tabloyu yenilemek için eklenmiştir
-
+                                destroy: true     // Mevcut tabloyu yenilemek için eklenmiştir
                             });
                         } else {
                             console.error("API boş veri döndürdü.");
@@ -72,6 +78,7 @@
                 });
             });
         </script>
+
     }
 </body>
 </html>
