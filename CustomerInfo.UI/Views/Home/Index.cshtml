@@ -1,0 +1,85 @@
+﻿@model List<CustomerVM>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Requests</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+    <style>
+        /* Tablo stil ayarları */
+        table.dataTable {
+            border-collapse: collapse; /* Kenarlıkların çakışmaması için */
+            width: 100%; /* Tablonun genişliğini ayarlama */
+        }
+
+        /* Başlık hücreleri */
+        th {
+            background-color: #f2f2f2; /* Başlık arka plan rengi */
+            border: 1px solid #ddd; /* Başlık kenarlığı */
+            padding: 8px; /* Başlık hücre içi boşluk */
+            text-align: left; /* Başlık metni sola yasla */
+        }
+
+        /* Veri hücreleri */
+        td {
+            border: 1px solid #ddd; /* Veri hücreleri kenarlığı */
+            padding: 8px; /* Veri hücre içi boşluk */
+        }
+
+        /* Satır hover efekti */
+        tr:hover {
+            background-color: #f1f1f1; /* Hover sırasında arka plan rengi */
+        }
+
+        /* Sayfalama ve arama alanları için stil */
+        .dataTables_wrapper {
+            margin-top: 20px; /* Üstte biraz boşluk bırakma */
+        }
+
+        /* Arama kutusu ve sayfalama için stil ayarları */
+        .dataTables_length, .dataTables_filter {
+            margin: 10px 0; /* Yukarı ve aşağı boşluk */
+        }
+    </style>
+</head>
+<body>
+    <h2>Service Requests</h2>
+    <table id="requestsTable" class="display">
+        <thead>
+            <tr>
+                <th>Name Surname</th>
+                <th>Address</th>
+                <th>Price</th>
+                <th>Installation Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var request in Model)
+            {
+                <tr>
+                    <td>@request.NameSurname</td>
+                    <td>@request.Address</td>
+                    <td>@request.Price</td>
+                    <td>@request.InstallationDate.ToString("yyyy-MM-dd")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('#requestsTable').DataTable({
+                paging: true,
+                searching: true,
+                ordering: true,
+                info: true
+            });
+        });
+    </script>
+</body>
+</html>
